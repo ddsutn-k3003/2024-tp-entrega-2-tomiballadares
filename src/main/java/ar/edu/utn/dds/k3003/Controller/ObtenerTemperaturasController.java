@@ -19,9 +19,8 @@ public class ObtenerTemperaturasController implements Handler {
         try {
             String id = context.pathParam("idHeladera");
             List<TemperaturaDTO> temperaturas = fachada.obtenerTemperaturas(Integer.valueOf(id));
-            context.json(temperaturas);
             context.status(200);
-            //context.result("Temperaturas obtenidas correctamente");
+            context.result("Temperaturas obtenidas correctamente");
         } catch (Exception e) {
             context.status(404);
             context.result("Heladera no encontrado");

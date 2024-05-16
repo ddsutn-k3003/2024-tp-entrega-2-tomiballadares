@@ -22,6 +22,21 @@
     <slf4j.version>2.0.13</slf4j.version>
   </properties>
 
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <finalName>TPDDSApp</finalName>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+          <appendAssemblyId>false</appendAssemblyId>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
   <dependencies>
     <!-- Libs -->
     <dependency>
@@ -47,7 +62,7 @@
     <dependency>
       <groupId>com.github.ezequieljsosa</groupId>
       <artifactId>dds-eval-tp2024</artifactId>
-      <version>0.0.17</version>
+      <version>0.0.18</version>
     </dependency>
 
     <dependency>
