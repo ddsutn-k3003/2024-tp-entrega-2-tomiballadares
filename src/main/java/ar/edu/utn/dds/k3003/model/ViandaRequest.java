@@ -4,13 +4,17 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
-@AllArgsConstructor
 @Setter
 @Getter
 
 public class ViandaRequest {
-    private String qr;
-    private Integer idHeladera;
+    private Integer heladeraId;
+    private String qrVianda;
+
+    public ViandaRequest(Integer heladeraId, String qrVianda) {
+        this.heladeraId = heladeraId;
+        this.qrVianda = qrVianda;
+    }
 
     public ViandaRequest() {
 

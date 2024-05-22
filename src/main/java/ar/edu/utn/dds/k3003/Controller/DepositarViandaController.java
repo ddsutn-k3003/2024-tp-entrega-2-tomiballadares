@@ -17,7 +17,7 @@ public class DepositarViandaController implements Handler {
     public void handle(@NotNull Context context) throws Exception {
         try {
             ViandaRequest viandaRequest = context.bodyAsClass(ViandaRequest.class);
-            fachada.depositar(viandaRequest.getIdHeladera(), viandaRequest.getQr());
+            fachada.depositar(viandaRequest.getHeladeraId(), viandaRequest.getQrVianda());
             context.status(200);
             context.result("Vianda depositada correctamente");
         }

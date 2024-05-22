@@ -27,7 +27,7 @@ public class WebApp {
         app.post("/temperaturas", new RegistrarTemperaturasController(fachada));
         app.get("/heladeras/{idHeladera}/temperaturas", new ObtenerTemperaturasController(fachada));
         app.post("/depositos", new DepositarViandaController(fachada));
-        //app.post("/retiros",)
+        app.post("/retiros", new RetirarViandaController(fachada));
     }
 
     public static ObjectMapper createObjectMapper() {
