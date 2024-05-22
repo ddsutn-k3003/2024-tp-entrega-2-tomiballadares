@@ -14,6 +14,7 @@ import java.util.Optional;
 public class Heladera {
     private Integer id;
     private String nombre;
+    private Integer cantidadDeViandas;
     Collection <Vianda> viandas;
     Collection<Temperatura>temperaturas;
 

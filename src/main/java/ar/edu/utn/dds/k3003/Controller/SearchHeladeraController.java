@@ -25,7 +25,7 @@ public class SearchHeladeraController implements Handler {
             Heladera heladera = fachada.getRepoHeladera().findById(parseInt(id));
             context.json(heladera);
             context.status(HttpStatus.OK);
-            context.result("Heladera obtenida correctamente");
+            //context.result("Heladera obtenida correctamente");
         }catch (Exception e){
             context.status(HttpStatus.NOT_FOUND);
             context.result("No se encontro el id del heladera");

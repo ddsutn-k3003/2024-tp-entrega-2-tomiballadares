@@ -21,11 +21,12 @@ public class AltaHeladeraController implements Handler {
     @Override
     public void handle(@NotNull Context context) throws Exception {
         try {
-            Heladera heladera = context.bodyAsClass(Heladera.class);
-            HeladeraDTO heladeraDTO = mapperHeladera.map(heladera);
-            fachada.agregar(heladeraDTO);
+            HeladeraDTO heladeraDTO = context.bodyAsClass(HeladeraDTO.class);
+            var heladeraDTOReturn= fachada.agregar(heladeraDTO);
+            context.json(heladeraDTOReturn);
             context.status(HttpStatus.CREATED);
-            context.result("Heladera agregada correctamente");
+            //context.json("Heladera agregada correctamente");
+
         } catch (Exception e){
             context.status(HttpStatus.BAD_REQUEST);
             context.result("Error de solicitud");
